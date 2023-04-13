@@ -1,13 +1,19 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import { Fragment } from "react";
 
-export default function Document() {
-  return (
-    <Html lang="en">
-      <Head />
-      <body>
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
-  )
+class MyDocument extends Document {
+  render() {
+    return (
+      <Html lang="fa">
+        <Head />
+        <body>
+          {/* for import some html code in all pages in projex for example modal */}
+          <div id="overlays"></div>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
 }
+export default MyDocument;
